@@ -14,6 +14,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sudo apt update -qq
+          sudo apt install -y wget curl
+      - run: |
+          curl -fsSL https://godotengine.github.io/godot-commit-artifacts/download/godotengine/godot/master/linux-editor-mono -o linux-editor-mono-curl
+          cat linux-editor-mono-curl
+
+          wget https://godotengine.github.io/godot-commit-artifacts/download/godotengine/godot/master/linux-editor-mono
+          cat linux-editor-mono
+
   build:
     name: Build and deploy to GitHub Pages
     runs-on: ubuntu-latest
