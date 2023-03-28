@@ -2,7 +2,7 @@ name: Continuous integration
 
 on:
   push:
-    branches: [ master ]
+  #  branches: [ master ]
   schedule:
     # Run every hour at 10 minutes past the hour mark.
     # The slight offset is there to try and avoid the high load times.
